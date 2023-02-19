@@ -7,6 +7,7 @@ do {
   );
 
   let showAll = "";
+  let k = 0;
   switch (choice) {
     case "1":
       let imobile = {};
@@ -18,25 +19,43 @@ do {
       console.log(imobile[0]);
       break;
     case "2":
-      for (let i = 0; imobiles.length > i; i++) {
-        let k = i + 1;
+      imobiles.forEach(function (element, indice) {
         showAll +=
           "Informação do imovel " +
-          k +
+          (indice + 1) +
           "\n" +
           "Nome do proprietario: " +
-          imobiles[i].name +
+          element.name +
           "\n" +
           "Numero de quartos: " +
-          imobiles[i].roomQuantity +
+          element.roomQuantity +
           "\n" +
           "Quantidade de banheiros: " +
-          imobiles[i].bathroomQuantity +
+          element.bathroomQuantity +
           "\n" +
           "Tem garagem: " +
-          imobiles[i].garage +
+          element.garage +
           "\n\n";
-      }
+      });
+      // for (let i = 0; imobiles.length > i; i++) {
+      //   let k = i + 1;
+      //   showAll +=
+      //     "Informação do imovel " +
+      //     k +
+      //     "\n" +
+      //     "Nome do proprietario: " +
+      //     imobiles[i].name +
+      //     "\n" +
+      //     "Numero de quartos: " +
+      //     imobiles[i].roomQuantity +
+      //     "\n" +
+      //     "Quantidade de banheiros: " +
+      //     imobiles[i].bathroomQuantity +
+      //     "\n" +
+      //     "Tem garagem: " +
+      //     imobiles[i].garage +
+      //     "\n\n";
+      // }
       alert(showAll);
       break;
     case "3":
